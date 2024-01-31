@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="hero">
+                <header class="header">
+                    <img src="./images/odin-head.png" alt="odin logo">
+                    <h1>ODIN</h1>
+                </header>
+                <footer class="credit">
+                    Photo by <a href="#">Halie West</a> on <a href="#">Unsplash</a>
+                </footer>
+            </div>
+            <div class="content">
+                <section class="intro">
+                    This is not a real online service! You know you need something<br>
+                    like this in your life to help you realize your deepest dreams.<br>
+                    Sign up <i>now</i> to get started.<br><br>
+                    You <i>know</i> you want to.
+                </section>
+                <form action="#" class="form" id="signup-form">
+                    <h3>Let's do this!</h3>
+                    <div class="field-container">
+                        <div class="left-field">
+                            <div class="form-group">
+                                <label for="fname">FIRST NAME<span aria-label="required" class="asterisk">  *</span></label>
+                                <input type="text" name="fname" id="fname" placeholder="e.g. John"required>
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">EMAIL<span aria-label="required" class="asterisk">  *</span></label>
+                                <input type="email" name="email" id="email" placeholder="e.g. jd@odin.com" required>
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">PASSWORD<span aria-label="required" class="asterisk">  *</span></label>
+                                <input type="password" name="password" id="password" placeholder="enter your password" required>
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="right-field">
+                            <div class="form-group">
+                               <label for="lname">LAST NAME<span aria-label="required" class="asterisk">  *</span></label>
+                               <input type="text" name="lname" id="lname" placeholder="e.g. Doe" required>
+                               <span></span> 
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">PHONE NUMBER<span class="optional"> (optional)</span></label>
+                                <input type="tel" id="phone" name="phone" placeholder="e.g. 0765432109" pattern="[0-9]{10}">
+                                <span></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirm">CONFIRM PASSWORD<span aria-label="required" class="asterisk">  *</span></label>
+                                <input type="password" name="confirm" id="confirm" placeholder="repeat your password" required>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <button type="submit" form="signup-form">Create Account</button>
+                <div class="login">
+                    Already have an account? <a href="#">Log in</a>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            Copyright 2023 by kylk27
+        </footer>
+    </div>
+</body>
+</html>

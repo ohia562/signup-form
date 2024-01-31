@@ -1,0 +1,217 @@
+@font-face {
+    font-family: 'norsebold';
+    src: url('./fonts/norse-bold-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+}
+
+.hero {
+    background-image: url(./images/background.webp);
+    background-size: cover;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    background: rgb(0, 0, 0, 0.5);
+    height: 155px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+
+}
+
+img {
+    height: 120px;
+}
+
+h1 {
+    color: #fff;
+    font-family: norsebold;
+    font-size: 90px;
+}
+
+.credit {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.credit a {
+    color: #fff;
+}
+
+.content {
+    flex: 2;
+    background: rgb(249, 248, 248);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro,
+button,
+.login {
+    margin-left: 60px;
+}
+
+.intro {
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form {
+    margin-top: 53px;
+    margin-bottom: 38px;
+    padding: 20px 0 40px 60px;
+    background: #fff;
+    box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.25);
+}
+
+h3 {
+    color: #333;
+    font-size: 22px;
+}
+
+.field-container {
+    margin-top: 20px;
+    display: flex;
+    gap: 60px;
+}
+
+label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #333;
+    display: block;
+    margin-top: 20px;
+}
+
+.asterisk {
+    color: #ff0000;
+    font-size: 13.6px;
+}
+
+input {
+    height: 39px;
+    width: 300px;
+    border: 1px solid rgb(205, 203, 203);
+    border-radius: 5px;
+    padding: 9px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid red;
+
+}
+
+input:required:valid:focus {
+    border: 1px solid green;
+}
+
+input + span {
+    position: relative;
+}
+
+input + span::after {
+    left: 7px;
+    top: -5px;
+}
+
+input:required:valid + span::after {
+    position: absolute;
+    content: "✓";
+    color: green;
+}
+
+input:not(:placeholder-shown):valid:focus {
+    border: 1px solid green;
+}
+
+input:not(:placeholder-shown):valid + span::after {
+    position: absolute;
+    content: "✓";
+    color: green;
+}
+
+.optional {
+    color: #bcbdbf;
+}
+
+input::placeholder {
+    font-size: 13px;
+    color: #bcbdbf;
+}
+
+
+
+button {
+    width: 210px;
+    font-size: 17px;
+    font-weight: bold;
+    background: #596D48;
+    color: #fff;
+    padding: 15px 0;
+    border: none;
+    border-radius: 6px;
+    margin-bottom: 40px;
+    box-shadow: 3px 4px 5px 0px rgba(0,0,0,0.24);
+}
+
+button:hover {
+    cursor: pointer;
+    filter: brightness(110%);
+}
+
+button:active {
+    filter: brightness(100%);
+}
+
+.login a {
+    text-decoration: none;
+    color: #596D48;
+    font-weight: bold;
+}
+
+.login a:hover {
+    filter: brightness(110%);
+}
+
+.footer {
+
+    font-size: 14px;
+    text-align: center;
+    color: rgb(160, 158, 158);
+    padding: 3px 0;
+
+
+}
+
+
