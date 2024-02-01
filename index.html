@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup form</title>
+    <script src="main.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -42,8 +43,16 @@
                             </div>
                             <div class="form-group">
                                 <label for="password">PASSWORD<span aria-label="required" class="asterisk">  *</span></label>
-                                <input type="password" name="password" id="password" placeholder="enter your password" required>
+                                <input type="password" name="password" id="password" placeholder="enter your password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
                                 <span></span>
+                            </div>
+                            <div class="message">
+                                <h4>Password must contain:</h4>
+                                <p id="length" class="invalid">Minimum 8 characters</p>
+                                <p id="uppercase" class="invalid">Atleast 1 uppercase letter</p>
+                                <p id="lowercase" class="invalid">Atleast 1 lowercase letter</p>
+                                <p id="number" class="invalid">Atleast 1 number</p>
                             </div>
                         </div>
                         <div class="right-field">
@@ -53,7 +62,7 @@
                                <span></span> 
                             </div>
                             <div class="form-group">
-                                <label for="phone">PHONE NUMBER<span class="optional"> (optional)</span></label>
+                                <label for="phone" class="phone">PHONE NUMBER<span class="optional"> (optional)</span></label>
                                 <input type="tel" id="phone" name="phone" placeholder="e.g. 0765432109" pattern="[0-9]{10}">
                                 <span></span>
                             </div>
@@ -61,6 +70,7 @@
                                 <label for="confirm">CONFIRM PASSWORD<span aria-label="required" class="asterisk">  *</span></label>
                                 <input type="password" name="confirm" id="confirm" placeholder="repeat your password" required>
                                 <span></span>
+                                <div id="pw-match" class="mismatch"><h4>Passwords do not match</h4></div>
                             </div>
                         </div>
                     </div>

@@ -40,7 +40,6 @@
     justify-content: center;
     align-items: center;
     margin-top: 200px;
-
 }
 
 img {
@@ -112,6 +111,10 @@ label {
     margin-top: 20px;
 }
 
+.phone {
+    margin-top: 24px;
+}
+
 .asterisk {
     color: #ff0000;
     font-size: 13.6px;
@@ -128,8 +131,12 @@ input {
 }
 
 input:focus {
-    border: 1px solid red;
+    border: 1px solid blue;
 
+}
+
+input:invalid:not(:placeholder-shown):not(:focus) {
+    border: 1px solid red;
 }
 
 input:required:valid:focus {
@@ -145,17 +152,11 @@ input + span::after {
     top: -5px;
 }
 
-input:required:valid + span::after {
-    position: absolute;
-    content: "✓";
-    color: green;
-}
-
 input:not(:placeholder-shown):valid:focus {
     border: 1px solid green;
 }
 
-input:not(:placeholder-shown):valid + span::after {
+input:not(:placeholder-shown):valid + span::after { 
     position: absolute;
     content: "✓";
     color: green;
@@ -169,8 +170,6 @@ input::placeholder {
     font-size: 13px;
     color: #bcbdbf;
 }
-
-
 
 button {
     width: 210px;
@@ -205,13 +204,66 @@ button:active {
 }
 
 .footer {
-
     font-size: 14px;
     text-align: center;
     color: rgb(160, 158, 158);
     padding: 3px 0;
-
-
 }
 
+@media (max-width: 950px) {
+    .field-container {
+        flex-direction: column;
+        gap: 0;
+        
+    }
+}
 
+.message {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #919293;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out;
+}
+
+.message.active {
+    height: 70px;
+}
+
+.valid {
+    color: green;
+    position: relative;
+    left: 4px;
+}
+
+.valid:before {
+    position: relative;
+    left: -5px;
+    content: "✔";
+}
+
+.invalid {
+    position: relative;
+    left: 4px;
+}
+
+.invalid:before {
+    position: relative;
+    left: -5px;
+    content: "✖";
+}
+
+#pw-match {
+    font-size: 12px;
+    color: red;
+    position: relative;
+    top: 6px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease-in-out; 
+}
+
+#pw-match.active {
+    height: 14px;
+}
