@@ -1,9 +1,8 @@
 @font-face {
-    font-family: 'norsebold';
-    src: url('./fonts/norse-bold-webfont.woff2') format('woff2');
+    font-family: 'vt220';
+    src: url('./fonts/glass_tty_vt220-webfont.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
-
 }
 
 * {
@@ -13,93 +12,121 @@
     font-family:Arial, Helvetica, sans-serif;
 }
 
-.container {
-    height: 100vh;
+body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 
-.main {
+.container {
     flex: 1;
     display: flex;
 }
 
 .hero {
-    background-image: url(./images/background.webp);
+    flex: 1 1;
+    background-image: url(./images/crt-background1.webp);
     background-size: cover;
-    flex: 1;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
-
-.header {
-    display: flex;
-    background: rgb(0, 0, 0, 0.5);
-    height: 155px;
-    justify-content: center;
-    align-items: center;
-    margin-top: 200px;
-}
-
-img {
-    height: 120px;
-}
-
-h1 {
-    color: #fff;
-    font-family: norsebold;
-    font-size: 90px;
-}
-
-.credit {
-    color: #fff;
+    padding: 30px 0;
     text-align: center;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-.credit a {
-    color: #fff;
 }
 
 .content {
-    flex: 2;
-    background: rgb(249, 248, 248);
+    flex: 2 50;
+    background: rgb(243, 243, 243);
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.header {
+    background: rgb(0, 0, 0, 0.5);
+    padding: 45px 0;
+    margin-top: 230px;
+}
+
+.title-container {
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    color: rgb(232, 229, 229);
+    font-family: vt220, Arial, Helvetica, sans-serif;
+    font-size: 95px;
+    position: relative;
+    top: 10px;
+    text-shadow: 0px 0px 8px rgba(232,229,229,1);
+}
+
+.header span {
+    color: rgb(232, 229, 229);
+    font-family: vt220, Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-shadow: 0px 0px 8px rgba(232,229,229,1);
+}
+
+.before {
+    align-self: flex-start;
+}
+
+.after {
+    align-self: flex-end;
+}
+
+.credit,
+.credit a {
+    color: rgb(232, 229, 229);
+    font-size: 15px;
 }
 
 .intro,
 button,
 .login {
-    margin-left: 60px;
+    margin: 0 70px;
 }
 
 .intro {
     font-size: 26px;
     font-weight: bold;
+    line-height: 1.5;
     color: #333;
 }
 
-.form {
+.signup-form {
     margin-top: 53px;
     margin-bottom: 38px;
-    padding: 20px 0 40px 60px;
     background: #fff;
+    padding: 20px 70px 40px 70px;
     box-shadow: 2px 4px 5px 0px rgba(0,0,0,0.25);
 }
 
-h3 {
-    color: #333;
+.signup-form h1 {
     font-size: 22px;
+    margin-bottom: 40px;
+    color: #333;
 }
 
-.field-container {
-    margin-top: 20px;
+.inputs-container {
     display: flex;
-    gap: 60px;
+    flex-wrap: wrap;
+    gap: 20px 60px;
+    max-width: 765px;
+}
+
+.form-group {
+    max-width: 350px;
+    min-width: 300px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 label {
@@ -107,12 +134,10 @@ label {
     font-weight: 700;
     letter-spacing: 1px;
     color: #333;
-    display: block;
-    margin-top: 20px;
 }
 
-.phone {
-    margin-top: 24px;
+.phone-label {
+    margin-top: 4px;
 }
 
 .asterisk {
@@ -122,7 +147,6 @@ label {
 
 input {
     height: 39px;
-    width: 300px;
     border: 1px solid rgb(205, 203, 203);
     border-radius: 5px;
     padding: 9px;
@@ -148,8 +172,9 @@ input + span {
 }
 
 input + span::after {
-    left: 7px;
-    top: -5px;
+    position: absolute;
+    right: -20px;
+    top: -30px;
 }
 
 input:not(:placeholder-shown):valid:focus {
@@ -157,7 +182,6 @@ input:not(:placeholder-shown):valid:focus {
 }
 
 input:not(:placeholder-shown):valid + span::after { 
-    position: absolute;
     content: "✓";
     color: green;
 }
@@ -175,7 +199,7 @@ button {
     width: 210px;
     font-size: 17px;
     font-weight: bold;
-    background: #596D48;
+    background: #28548a;
     color: #fff;
     padding: 15px 0;
     border: none;
@@ -193,9 +217,14 @@ button:active {
     filter: brightness(100%);
 }
 
+.login {
+    margin-bottom: 30px;
+    color: #333;
+}
+
 .login a {
     text-decoration: none;
-    color: #596D48;
+    color: #28548a;
     font-weight: bold;
 }
 
@@ -203,19 +232,55 @@ button:active {
     filter: brightness(110%);
 }
 
-.footer {
-    font-size: 14px;
-    text-align: center;
-    color: rgb(160, 158, 158);
-    padding: 3px 0;
+@media screen and (max-width: 1202px) {
+    form h1 {
+        text-align: center;
+    }
+    
+    .inputs-container {
+        justify-content: center;
+    }
+    
+    .intro {
+        text-align: center;
+        margin: 50px 70px 0;
+    }
+
+    button {
+        margin: 0 auto 40px;
+    }
+
+    .login {
+        text-align: center;
+    }
 }
 
-@media (max-width: 950px) {
-    .field-container {
-        flex-direction: column;
-        gap: 0;
-        
+@media screen and (max-width: 955px) {
+    .container {
+        display: block;
     }
+
+    .inputs-container {
+        padding: 0 65px;
+    }
+
+    .header {
+        margin: 190px 0;
+    }
+
+    .intro {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .hero,
+    .content {
+        width: 400px;
+        flex-shrink: 0;
+    }
+
+    
 }
 
 .message {
@@ -266,4 +331,22 @@ button:active {
 
 #pw-match.active {
     height: 14px;
+}
+
+.footer {
+    color: #fff;
+    background: #333;
+    padding: 10px 0;
+    text-align: center;
+    font-size: 13px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #28548a;
+    filter: brightness(200%);
 }

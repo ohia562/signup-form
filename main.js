@@ -65,4 +65,3 @@ function validatePassword() {
 
 pwInput.addEventListener('keyup', validatePassword);
 confirmPW.addEventListener('keyup', validatePassword);
-
